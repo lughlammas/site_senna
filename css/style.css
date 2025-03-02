@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header estilo hero */
+/* Header estilo hero (só aparece no index.html) */
 .hero {
     height: 80vh;
     background: url('../assets/ayrton1.jpg') center/cover no-repeat fixed;
@@ -58,31 +58,59 @@ body {
     opacity: 0.9;
 }
 
-/* Seção de biografia */
-.biografia {
-    padding: 60px 20px;
-    background: #222;
+/* Header simples para páginas internas */
+.subpage-header {
     text-align: center;
-    border-bottom: 4px solid #f7b42c;
+    padding: 30px 0;
+    background: #222;
+    border-bottom: 3px solid #f7b42c;
 }
 
-.biografia h2 {
+.subpage-header h1 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
     color: #f7b42c;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-.biografia p {
-    font-size: 1.2rem;
+/* Corpo das subpáginas */
+main {
+    background: #222;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
     max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
     text-align: justify;
+    line-height: 1.8;
 }
 
-/* Galeria */
+main p {
+    font-size: 1.1rem;
+}
+
+/* Footer padrão (voltar à galeria) */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background: #111;
+    border-top: 3px solid #f7b42c;
+}
+
+footer a {
+    color: #f7b42c;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fc575e;
+    text-decoration: underline;
+}
+
+/* Galeria principal (index) */
 .galeria {
     padding: 50px 20px;
     background: #111;
@@ -180,3 +208,4 @@ a:hover {
         transform: translateY(0);
     }
 }
+
