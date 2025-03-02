@@ -16,7 +16,7 @@ body {
 /* Header estilo hero */
 .hero {
     height: 80vh;
-    background: url('../assets/Ayrton1.jpg') center/cover no-repeat fixed;
+    background: url('../assets/ayrton1.jpg') center/cover no-repeat fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;

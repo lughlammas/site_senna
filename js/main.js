@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.dataset.title = `Curiosidade ${i}`;
 
         const img = document.createElement('img');
-        img.src = `assets/Ayrton${i}.jpg`;
+        img.src = `assets/ayrton${i}.jpg`;
         img.alt = `Ayrton Senna ${i}`;
 
         link.appendChild(img);
