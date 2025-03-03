@@ -2,15 +2,28 @@
 <html lang="pt-BR">
 <head>
     <title>Ayrton Senna - Legado Eterno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <header class="hero">
-        <h1>Legado Eterno de Ayrton Senna</h1>
-        <p>O maior piloto de todos os tempos</p>
-    </header>
 
+    <audio id="background-audio" autoplay loop>
+        <source src="assets/jazz-senna.mp3" type="audio/mp3">
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+    
+    <div class="audio-control">
+        <button id="toggle-audio">🎷 Jazz On/Off</button>
+    </div>
+    
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Legado Eterno de Ayrton Senna</h1>
+            <p>O maior piloto de todos os tempos</p>
+        </div>
+    </header>
+    
     <section class="biografia">
         <h2>Quem foi Ayrton Senna?</h2>
         <p>Ayrton Senna da Silva foi um piloto brasileiro de Fórmula 1, tricampeão mundial nos anos de 1988, 1990 e 1991. 
@@ -23,5 +36,8 @@
             <!-- Imagens serão inseridas dinamicamente via JS -->
         </div>
     </section>
+
+    <!-- JS no final sempre que possível -->
+    <script src="js/main.js" defer></script>
 </body>
 </html>

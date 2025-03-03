@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    alert('Dê play e sinta o Groove do Jazz de Senna 🎷🔥'); // <- Essa belezinha aqui
+
     const imagens = [
         { src: "assets/ayrton1.jpg", titulo: "O Kart de Lata que Virou Lenda", link: "pages/1 - O Kart de Lata que Virou Lenda.html" },
         { src: "assets/ayrton2.jpg", titulo: "Primeira Vitória na F1 — Estoril 1985", link: "pages/2 - Primeira Vitória na F1 — Estoril 1985.html" },
@@ -13,7 +15,40 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const imagensGrid = document.querySelector('.imagens-grid');
+    const audio = document.getElementById('background-audio');
+    const toggleButton = document.getElementById('toggle-audio');
 
+    let isPlaying = false;
+
+    // Tenta iniciar o áudio automaticamente no mute (Chrome friendly)
+    audio.volume = 0;
+    const autoPlayPromise = audio.play();
+
+    if (autoPlayPromise !== undefined) {
+        autoPlayPromise.then(() => {
+            console.log('🎷 Autoplay funcionou (milagre!)');
+            audio.volume = 1; // Som normal após start
+            isPlaying = true;
+            toggleButton.innerText = '🎷 Jazz Off';
+        }).catch(() => {
+            console.warn('🚫 Autoplay bloqueado, esperando interação');
+        });
+    }
+
+    // Botão manual de controle (caso autoplay falhe)
+    toggleButton.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            toggleButton.innerText = '🎷 Jazz On';
+        } else {
+            audio.volume = 1; // Garante volume certo
+            audio.play().catch(err => console.warn('Erro ao dar play:', err));
+            toggleButton.innerText = '🎷 Jazz Off';
+        }
+        isPlaying = !isPlaying;
+    });
+
+    // Popula a galeria dinamicamente
     imagens.forEach(imagem => {
         const container = document.createElement('div');
         container.classList.add('foto');
