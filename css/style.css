@@ -290,3 +290,89 @@ footer a:hover {
     color: #fc575e;
     text-decoration: underline;
 }
+/* Ajustes gerais para telas menores */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Menor altura do banner para caber em telas pequenas */
+        background-attachment: scroll; /* Evita problemas de performance com 'fixed' no mobile */
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Título menor */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .biografia {
+        padding: 30px 15px;
+    }
+
+    .biografia h2 {
+        font-size: 1.8rem;
+    }
+
+    .biografia p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .galeria {
+        padding: 30px 15px;
+    }
+
+    .galeria h2 {
+        font-size: 1.8rem;
+    }
+
+    .imagens-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Mais colunas e menor tamanho */
+        gap: 8px;
+    }
+
+    .foto .hover-text {
+        font-size: 0.8rem; /* Texto da galeria menor */
+        padding: 8px;
+    }
+
+    .audio-control {
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+    }
+
+    main {
+        padding: 20px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para telas realmente pequenas (celulares antigos ou telas minúsculas) */
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .imagens-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .audio-control button {
+        padding: 6px 12px;
+    }
+}
